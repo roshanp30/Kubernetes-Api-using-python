@@ -43,7 +43,6 @@ def create_deployment(api_instance,newnamespace):
         namespace=str(newnamespace).lower())
     """
     print("Deployment deleted. status='%s'" % str(api_response.status))
-    print("AKE PUCH APE BAARE ME")
     print(api_response.kind)
     print("METADATA")
     print(api_response.metadata)
