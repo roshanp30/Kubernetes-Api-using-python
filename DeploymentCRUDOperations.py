@@ -87,6 +87,7 @@ def check_if_deployment_exists(api_instance,namespace,deploymentName):
              if  deploymentAlreadyExists==deploymentName:
                 return True
              """
+	     #Add some logic as per use-case if deployment doesnt exist
              else :
                 return False
              """
@@ -97,12 +98,10 @@ if __name__ == '__main__':
     config.load_kube_config()
     extensions_v1beta1 = client.ExtensionsV1beta1Api()
     #create_deployment(extensions_v1beta1,"default")
-    #increase_replicas(extensions_v1beta1,3)
-    
-    exists=check_if_deployment_exists(extensions_v1beta1,NAMESPACE,DEPLOYMENT_NAME)
-    
-    if exists:
-        replica_scale=read_scale(extensions_v1beta1,DEPLOYMENT_NAME,NAMESPACE)
-        increase_replicas(extensions_v1beta1,replica_scale+2,DEPLOYMENT_NAME,NAMESPACE)
-    else :
-        create_deployment(extensions_v1beta1,NAMESPACE)
+	create_deployment(extensions_v1beta1,NAMESPACE)
+	exists=check_if_deployment_exists(extensions_v1beta1,NAMESPACE,DEPLOYMENT_NAME)
+	#Uncomment below to check no of replicas for deployment	
+	#replica_scale=read_scale(extensions_v1beta1,DEPLOYMENT_NAME,NAMESPACE)
+
+	#Uncomment below to increase number of replicas,first parameter is api instance and second is desired number of replicas and remaining parameters are self explanatory
+	#increase_replicas(extensions_v1beta1,replica_scale+2,DEPLOYMENT_NAME,NAMESPACE)
