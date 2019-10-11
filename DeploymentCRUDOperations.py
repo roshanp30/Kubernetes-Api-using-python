@@ -87,7 +87,7 @@ def check_if_deployment_exists(api_instance,namespace,deploymentName):
              if  deploymentAlreadyExists==deploymentName:
                 return True
              """
-	     #Add some logic as per use-case if deployment doesnt exist
+		     #Add some logic as per use-case if deployment doesnt exist
              else :
                 return False
              """
