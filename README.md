@@ -5,4 +5,4 @@ Operation on kubernetes deployment and pods using api
  
  2> Executing command inside running container/pods
  
- Thanks. Please reachout to roshanpatil3004@gmail.com for any help. :)
+ Thanks! Please reach out to roshanpatil3004@gmail.com for any help. :)
